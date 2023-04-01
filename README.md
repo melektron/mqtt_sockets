@@ -15,6 +15,8 @@ This project allows an ESP8266 connected to an MQTT server through WiFi and take
 To use the project, you need to specify WIFI secrets, fingerprints and other configuration in the ```include/secrets.h``` file. Example content:
 
 ```c
+#pragma once
+
 // generate the fingerprint on the server using this command:
 // echo | openssl s_client -connect localhost:1883 | openssl x509 -fingerprint -noout
 #define MQTT_FINGERPRINT "07 ED 59 67 2C CD 31 6C EF 27 F7 AC 38 02 07 9C 60 EC FA 0A" // this isn't used at the moment because it didn't work
