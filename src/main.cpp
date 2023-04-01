@@ -271,7 +271,7 @@ void callback(char* topic, uint8_t* payload, size_t length) {
     raiseError(2, "Payload to long for static buffer");                   // rais an error message
     return;                                                               // and break the function
   }
-  for (int i = 0; i < length; i++) {                                      // otherwise load the payload from a byte array into the char array msg_buf
+  for (size_t i = 0; i < length; i++) {                                      // otherwise load the payload from a byte array into the char array msg_buf
     msg_buf[i] = (char)payload[i];
   }
   msg_buf[length] = '\0';                             // add terminator byte the the end of the char array
@@ -344,7 +344,7 @@ void callback(char* topic, uint8_t* payload, size_t length) {
                   strcpy(stateBuf, msg_doc["state"]);                                         // if that is the case we will copy the value to stateBuf
                   Serial.print("Fetched json \"state\": ");
                   Serial.println(stateBuf);
-                  for (int i = 0; i < strlen(stateBuf); i++){                                 // and turn all letters to lower case
+                  for (size_t i = 0; i < strlen(stateBuf); i++){                                 // and turn all letters to lower case
                     tmpchar = toupper(stateBuf[i]);
                     stateBuf[i] = tmpchar;
                   }
@@ -481,7 +481,7 @@ void callback(char* topic, uint8_t* payload, size_t length) {
                   strcpy(stateBuf, msg_doc["state"]);                                         // if that is the case we will copy the value to stateBuf
                   Serial.print("Fetched json \"state\": ");
                   Serial.println(stateBuf);
-                  for (int i = 0; i < strlen(stateBuf); i++){                                 // and turn all letters to lower case
+                  for (size_t i = 0; i < strlen(stateBuf); i++){                                 // and turn all letters to lower case
                     tmpchar = toupper(stateBuf[i]);
                     stateBuf[i] = tmpchar;
                   }
