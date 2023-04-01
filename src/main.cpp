@@ -64,8 +64,8 @@ int WiFiConnected = 2;                            // Pin for an LED that blinks 
 const char* cfg_wifi_ssid = WIFI_SSID;            // WiFi SSID
 const char* cfg_wifi_pwd = WIFI_PSK;              // WiFi Password
 
-const char* mqtt_server = "192.168.1.13";         // MQTT server
-const unsigned int mqtt_port = 1883;              // MQTT port
+const char* mqtt_server = MQTT_SERVER;         // MQTT server
+const unsigned int mqtt_port = MQTT_PORT;              // MQTT port
 const char* mqtt_user =   MQTT_USER;              // MQTT user
 const char* mqtt_pass =   MQTT_PWD;               // MQTT passwd
 uint32_t conCheckInterval = 1000000;              // Each x loopcycles the connecttino to the server will be checked
