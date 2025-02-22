@@ -10,6 +10,15 @@ The folder "old_code" contains all the old code and versions that came about bef
 
 This project allows an ESP8266 connected to an MQTT server through WiFi and take commands from a SmartHome system like HomeAssistant. It then parses these commands and switches 433 MHz Remote controlled sockets on or off using a 433 MHz transmitter connected to the ESP. Multiple Remote-Socket protocols are supported.
 
+
+## Project structure
+
+This is a PIO project, so it has all the usual code folders. Additionally, the ```hardware``` folder contains KiCAD projects (legacy KiCAD project structure as these are old files):
+- ```hardware/WiFi-RC-Switch-Bridge_Outlet```: The main PCB containing the ESP, RF-Transceivers and an integrated AC power supply for powering the board from the wall. This is what was used in the end.
+- ```hardware/WiFi-RC-Switch-Bridge_USB```: At one point there was a plan to create a version of the board powered by USB. This contains the KiCAD project for that, although it was never completed.
+- ```hardware/WiFi-RC-Switch-Programmer```: A USB-to-UART adapter based on CH340G to flash the ESP on the board. This has a connector matching the pinout of the header on the main PCB. Over the years, this has been used for many other projects and purposes.
+
+
 ## Setup
 
 To use the project, you need to specify WIFI secrets, fingerprints and other configuration in the ```include/secrets.h``` file. Example content:
